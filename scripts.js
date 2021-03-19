@@ -50,10 +50,28 @@ function Recipe (recipeTitle, imageURL, contributorName, ingredientFile, equipme
 SoftPretzels = new Recipe(
 	"Soft Pretzels", 
 	"https://sieaety.com/tp4/images/pretzel.jpg",
-	"Kristine",
+	"Kristine Zorn",
 	"ingredients.html",
 	"equipment.html",
 	"directions.html"
+);
+
+Cookies = new Recipe(
+	"Triple Choclate Chunk Cookies", 
+	"https://sieaety.com/tp4/images/cookies.jpg",
+	"Jaclyn Seifert",
+	"cookie-ingredients.html",
+	"cookie-equipment.html",
+	"cookie-directions.html"
+);
+
+Crepe = new Recipe(
+	"Easy Crepes", 
+	"https://sieaety.com/tp4/images/crepe.jpg",
+	"Katelyn Gorman ",
+	"crepe-ingredients.html",
+	"crepe-equipment.html",
+	"crepe-directions.html"
 );
 
 window.onload = function() {
