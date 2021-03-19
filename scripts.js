@@ -25,27 +25,38 @@ function loadFileInto(fromFile, whereTo) {
 
 }
 
+
+//generic object constructor
+function Recipe (recipeTitle, imageURL, contributorName, ingredientFile, equipmentFile, directionsFile) {
+  this.title = recipeTitle;
+  this.imgsrc = imageURL;
+  this.contributor = contributorName;
+  this.ingredients = ingredientFile;
+  this.equipment = equipmentFile;
+  this.directions = directionsFile;
+
+   
+  this.displayRecipe = function() {
+    document.querySelector("#title").innerHTML = this.title;
+    document.querySelector("#contribute").innerHTML = "Contributed by " + this.contributor;
+    document.querySelector("img").src = this.imgsrc;
+    
+    loadFileInto(this.ingredients, "ingredients");
+    loadFileInto(this.equipment, "equipment");
+    loadFileInto(this.directions, "directions");
+  }
+}
+
+SoftPretzels = new Recipe(
+	"Soft Pretzels", 
+	"https://sieaety.com/tp4/images/pretzel.jpg",
+	"Kristine",
+	"ingredients.html",
+	"equipment.html",
+	"directions.html"
+);
+
 window.onload = function() {
-  
-  loadFileInto("ingredients.html", "ingredients");
-  loadFileInto("equipment.html", "equipment");
-  loadFileInto("directions.html", "directions");
-
-  //adds new paragraph element to DOM after image
-  comment = document.createElement('div');
-  comment.className = "comment";
-  comment.innerHTML = '<p>"If you have a big family, make sure to triple the batch. Otherwise they will be gone in seconds."</p>';
-  console.log(comment);
-  body = document.querySelector("body");
-  document.body.insertBefore(comment, body.childNodes[6]);
-
-  //changes title font size and color on click
-  x = document.querySelector("#title");
-  x.style.fontSize = "8vw";
-  x.addEventListener("click", function() {
-    x.className = "changeColor";
-  });
-
 //allows list visibility to be toggled on and off 
 list = document.querySelectorAll(".list");
 console.log(list);
